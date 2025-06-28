@@ -267,7 +267,9 @@ countryList.forEach((country) => {
   terms.push({ score: 0, member: term + "*" });
 
   const populateDB = async () => {
-    // @ts-expect-error
+
+    
+    // @ts-expect-error: redis.zadd expects a different argument shape
     await redis.zadd("terms", ...terms);
   };
 
